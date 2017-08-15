@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-03-16"
+lastupdated: "2017-08-15"
 
 ---
 {:new_window: target="_blank"}
@@ -27,9 +27,9 @@ The following steps show you how to obtain access to the {{site.data.keyword.sim
 
 You must install cURL before you can use the service.
 
-## Step 1: Create an application and bind it to the service
+## Step 1: Getting your credentials
 
-1. Create an application that binds to the service instance.
+1. Create an instance of the service.
 2. Review the service instance access credentials, similar to the following example:
 ```
 {
@@ -43,8 +43,8 @@ You must install cURL before you can use the service.
 To use the following example, replace api-key with your service key, the service-url with the URL for your service, and your scenario file. To create the scenario file, use the [{{site.data.keyword.predmarketscenario_short}} service](/docs/services/PredictiveMarketScenarios/index.html).
 
 ```
-curl -X POST -H "X-IBM-Access-Token: <api-key>" -H "EncType: multipart/form-data" -F "scenario_file=@<location-of-scenario-file>" "<service-url>
-/api/v1/scenario/instrument/<id-of-instrument>”
+curl -X POST -H "X-IBM-Access-Token: <api-key>" -H "EncType: multipart/form-data" -F "scenario_file=@<location-of-scenario-file>" <service-url>
+/api/v1/scenario/instrument/<id-of-instrument>
 ```
 
 {:codeblock}
@@ -54,8 +54,8 @@ The following is an example of a response to a successful request:
 ```
 [
   {
-    "instrument": “<id-of-instrument>",
-    "scenario": “Base Scenario",
+    "instrument": "<id-of-instrument>",
+    "scenario": "Base Scenario",
     "values": [
       {
         "THEO/Price": "100 USD",
@@ -64,8 +64,8 @@ The following is an example of a response to a successful request:
     ]
   },
   {
-    "instrument": “<id-of-instrument>",
-    "scenario": “New Scenario",
+    "instrument": "<id-of-instrument>",
+    "scenario": "New Scenario",
     "values": [
       {
         "THEO/Price": "110 USD",
@@ -88,7 +88,7 @@ A list of instruments is available [here](http://public.dhe.ibm.com/software/ana
 
 ### Field Name values
 
-The following table contains `Field Name` values that you can pass to the API for the measures, and the asset classes (Fixed Income, Equity, or Derivative) that they apply to:
+The following table contains 'Field Name' values that you can pass to the API for the measures, and the asset classes (Fixed Income, Equity, or Derivative) that they apply to:
 
 |Measure Name|Field Name|Fixed Income|Equity|Derivatives|
 |------------|----------|------------|------|-----------|
