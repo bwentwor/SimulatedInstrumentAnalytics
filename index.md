@@ -76,6 +76,60 @@ The following is an example of a response to a successful request:
 ]
 ```
 
+## Example: Calculate the analytics for multiple instruments
+To use this example, replace api-key with your service key, the service-url with the URL for your service, and your scenario file. To create the scenario file, use the [{{site.data.keyword.predmarketscenario_short}} service](/docs/services/PredictiveMarketScenarios/index.html).
+
+```
+curl -X POST -H "X-IBM-Access-Token: <api-key>" -H "EncType: multipart/form-data" 
+  -F "scenario_file=@<location-of-scenario-file>" 
+  -F 'analytics=<fileld-name>,<failed-name>' 
+  -F 'instruments=<instrument-id>,<instrument-id>,<instrument-id>,<instrument-id>'
+  <service-url>/api/v1/scenario/instruments
+```
+{:codeblock}
+
+
+The following is an example of a response to a successful request:
+
+```
+[
+    {
+        "instrument": "CX_US01551UAA25_USD",
+        "scenario": "BASE (0.2500)",
+        "values": [
+            {
+                "THEO/Price": "96.8750 USD",
+                "THEO/Value": "97.0639 USD",
+                "date": "2018/04/23"
+            }
+        ]
+    },
+    {
+        "instrument": "CX_US25152R2X04_USD",
+        "scenario": "BASE (0.2500)",
+        "values": [
+            {
+                "THEO/Price": "99.6381 USD",
+                "THEO/Value": "100.5062 USD",
+                "date": "2018/04/23"
+            }
+        ]
+    },
+    {
+        "instrument": "CX_US25152R2Y86_USD",
+        "scenario": "BASE (0.2500)",
+        "values": [
+            {
+                "THEO/Price": "99.5444 USD",
+                "THEO/Value": "100.6833 USD",
+                "date": "2018/04/23"
+            }
+        ]
+    }
+]
+```
+
+
 ### Example scenario files
 
 [curve_shifts_sample.csv](http://public.dhe.ibm.com/software/analytics/solutions/en/fintech/curve_shifts_sample.csv) is a scenario sample file representing different interest rate curve movements with both parallel and non-parallel shifts.
