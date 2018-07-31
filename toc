@@ -7,3 +7,7 @@ Simulated Instrument Analytics
     {: .navgroup id="learn"}
     index.md
     {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    [API reference](https://console.bluemix.net/apidocs/fss-scenario-analytics-service)
+    {: .navgroup-end}
